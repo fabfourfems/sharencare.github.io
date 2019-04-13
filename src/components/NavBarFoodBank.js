@@ -58,8 +58,8 @@ class NavBar extends Component {
               <AppBar style={styles.nav}>
                 <Toolbar>
                   <img src={logo} height="60px" alt="logo" />
-                  <a href={Routes.res}><Button style={styles.navbutton}>Home</Button></a>
-                  <a href={Routes.data}><Button style={styles.navbutton} block>Food Data</Button></a>
+                  {/* <a href={Routes.res}><Button style={styles.navbutton}>Home</Button></a>
+                  <a href={Routes.data}><Button style={styles.navbutton} block>Food Data</Button></a> */}
                   <Typography style={styles.rtext}>
                     {this.name}
                   </Typography>

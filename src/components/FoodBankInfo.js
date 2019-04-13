@@ -15,14 +15,7 @@ class FoodBankInfo extends Component {
     componentDidMount() {}
 
     componentWillReceiveProps(props) {
-        /**
-         * name
-         * info
-         * 
-         */
-        // this.setState({
-        //     name: props.name,
-        // })
+        console.log(this.props.info);
         this.setState({
             name: props.name,
             address: props.address,
