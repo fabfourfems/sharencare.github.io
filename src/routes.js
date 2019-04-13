@@ -4,6 +4,7 @@ const routes = {
     signup: '/signup',
     foodbank: '/:foodbank',
     res: '/res',
+    data: '/data',
 };
 
 export default routes;
