@@ -7,6 +7,7 @@ import NavBar from './components/NavBar'
 import Home from './Home';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
+import FoodbankHome from './FoodbankHome';
 
 class App extends Component {
   signin() {
@@ -29,7 +30,7 @@ class App extends Component {
 
   foodbankHome() {
     return(
-      <div>Dashboard</div>
+      <FoodbankHome/>
     );
   }
 
