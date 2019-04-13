@@ -2,7 +2,7 @@ const routes = {
     home: '/',
     signin: '/signin',
     signup: '/signup',
-    foodbank: '/:foodbank',
+    foodbank: '/foodbank',
     res: '/res',
     data: '/data',
 };
