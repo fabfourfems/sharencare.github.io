@@ -2,18 +2,12 @@ import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import { Link, withRouter } from "react-router-dom";
+import Routes from './../routes';
 
 class HomeCard extends Component {
     constructor(props) {
         super(props);
-    }
-
-    componentDidMount() {
-
-    }
-
-    componentWillReceiveProps(nextProps) {
-
     }
 
     render() {
@@ -26,7 +20,9 @@ class HomeCard extends Component {
                         <p> Mission:</p>
                         <p> {this.props.mission} </p>
                         <br/>
-                        <Button id="seemore" variant="contained">See More</Button>
+                        <Link to={Routes.foodbank}>
+                            <Button id="seemore" variant="contained" onClick={() => this.props.setFoodBank(this.props.info)}>See More</Button>
+                        </Link>
                     </CardContent>
                 </Card>
             </div>
@@ -35,4 +31,4 @@ class HomeCard extends Component {
 
 }
 
-export default HomeCard;
+export default withRouter(HomeCard);

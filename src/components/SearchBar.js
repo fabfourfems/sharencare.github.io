@@ -12,7 +12,7 @@ class SearchBar extends Component {
                     label="Zipcode"
                     margin="normal"
                     variant="outlined"
-                    style={{width: "50%"}} />
+                    style={{width: "100%"}} />
             </div>
         );
     }

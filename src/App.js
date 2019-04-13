@@ -3,13 +3,40 @@ import { HashRouter as Router, Switch, Redirect, Route } from 'react-router-dom'
 
 import Routes from './routes';
 import './App.css';
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar';
+import NavBarFoodBank from './components/NavBarFoodBank';
 import Home from './Home';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
+import FoodbankHome from './FoodbankHome';
 import FoodBankInfo from './components/FoodBankInfo';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      foodBankInfo: {}
+    }
+  }
+
+  componentDidMount() {
+    let databaseRef = this.props.firebase.database().ref(`foodbanks`);
+    databaseRef.on('value', (snapshot) => {
+      if (snapshot) {
+        this.setState({
+          foodBankInfo: snapshot.val(),
+          info: {}
+        })
+      }
+    })
+  }
+
+  setFoodBank = (info) => {
+    this.setState({
+      info: info
+    })
+  }
+
   signin() {
     return (
       <Signin firebase={this.props.firebase}/>
@@ -24,19 +51,19 @@ class App extends Component {
 
   browseView() {
     return (
-      <Home/>
+      <Home foodBankInfo={this.state.foodBankInfo} setFoodBank={this.setFoodBank}/>
     );
   }
 
   foodbankHome() {
     return(
-      <div>Dashboard</div>
+      <FoodbankHome firebase={this.props.firebase}/>
     );
   }
 
   foodbankInfo() {
     return(
-      <FoodBankInfo/>
+      <FoodBankInfo info={this.state.foodBankInfo}/>
     );
   }
 
@@ -53,9 +80,10 @@ class App extends Component {
   }
 
   navbar() {
-    return (
-      <NavBar/>
-    );
+    if (this.props.firebase.auth().currentUser) {
+      return (<NavBarFoodBank/>);
+    }
+    return (<NavBar />);
   }
 
   render() {
