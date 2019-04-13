@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
+import SearchBar from './components/SearchBar';
+
 class Home extends Component {
+
     render() {
         return(
             <div>
                 Browse View
 
-                Search bar
+                <SearchBar/>
 
                 Results
             </div>

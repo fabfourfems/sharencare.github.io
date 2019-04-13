@@ -17,6 +17,7 @@ class HomeCard extends Component {
         return(
             <div>
                 <p>HomeCard</p>
+                this.props.history.push(Routes.foodbank)
             </div>
         );
     }
