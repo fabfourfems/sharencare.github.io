@@ -7,6 +7,7 @@ import NavBar from './components/NavBar'
 import Home from './Home';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
+import FoodBankInfo from './components/FoodBankInfo';
 
 class App extends Component {
   signin() {
@@ -33,12 +34,19 @@ class App extends Component {
     );
   }
 
+  foodbankInfo() {
+    return(
+      <FoodBankInfo/>
+    );
+  }
+
   matchRoute() {
     return(
       <Switch>
         <Route exact path={Routes.signin} component={() => this.signin()} />
         <Route exact path={Routes.signup} component={() => this.signup()} />
         <Route exact path={Routes.home} component={() => this.browseView()} />
+        <Route exact path={Routes.foodbank} component={() => this.foodbankInfo()} />
         <Route exact path={Routes.res} component={() => this.foodbankHome()} />
       </Switch>
     );

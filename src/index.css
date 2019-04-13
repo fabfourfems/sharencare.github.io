@@ -18,6 +18,15 @@ code {
   margin: 0 auto;
 }
 
+.foodcard{
+  width: 45%;
+  margin: 0 auto;
+}
+
+.paragraph{
+  text-align:center;
+}
+
 .search-bar {
   margin: 0 25%; 
 }
@@ -31,6 +40,10 @@ code {
 }
 
 #homecardbackground{
+  background-color: #F4976D !important;
+}
+
+#foodcardbackground{
   background-color: #F4976D !important;
 }
 
