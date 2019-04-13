@@ -22,6 +22,7 @@ class HomeCard extends Component {
     }
 
     render() {
+        let name = this.state.name;
         return (
             <div className="homecard">
                 <ExpansionPanel>
