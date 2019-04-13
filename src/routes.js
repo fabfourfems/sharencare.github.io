@@ -3,7 +3,7 @@ const routes = {
     signin: '/signin',
     signup: '/signup',
     foodbank: '/:foodbank',
-    res: '/res/:foodbank',
+    res: '/res',
 };
 
 export default routes;

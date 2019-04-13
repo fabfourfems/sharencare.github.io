@@ -5,8 +5,6 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Routes from './../routes';
 
-
-
 class Signup extends Component {
     componentDidMount() {
         this.authUnsub = this.props.firebase.auth().onAuthStateChanged(user => {
@@ -29,7 +27,21 @@ class Signup extends Component {
     }
 
     signup() {
-        
+        if (this.state.password === this.state.passwordConfirmation) {
+            this.props.firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            .then(resp => {
+                let user = resp.user;
+                let databaseRef = this.props.firebase.database().ref(`foodbanks/${user.uid}/created`).set(true);
+                this.props.history.push(Routes.res);
+            })
+            .catch(error => {
+                let errorCode = error.code;
+                let errorMessage = error.message;
+                window.alert(`error code: ${errorCode}\nerror message: ${errorMessage}`);
+            });
+        } else {
+            window.alert("passwords do not match!");
+        }
     }
 
     render() {

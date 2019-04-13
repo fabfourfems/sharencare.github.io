@@ -28,7 +28,9 @@ class App extends Component {
   }
 
   foodbankHome() {
-
+    return(
+      <div>Dashboard</div>
+    );
   }
 
   matchRoute() {
@@ -37,6 +39,7 @@ class App extends Component {
         <Route exact path={Routes.signin} component={() => this.signin()} />
         <Route exact path={Routes.signup} component={() => this.signup()} />
         <Route exact path={Routes.home} component={() => this.browseView()} />
+        <Route exact path={Routes.res} component={() => this.foodbankHome()} />
       </Switch>
     );
   }
