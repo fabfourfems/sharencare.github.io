@@ -9,6 +9,7 @@ import Home from './Home';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import FoodbankHome from './FoodbankHome';
+import FoodBankInfo from './components/FoodBankInfo';
 
 class App extends Component {
   constructor(props) {
@@ -23,9 +24,16 @@ class App extends Component {
     databaseRef.on('value', (snapshot) => {
       if (snapshot) {
         this.setState({
-          foodBankInfo: snapshot.val()
+          foodBankInfo: snapshot.val(),
+          info: {}
         })
       }
+    })
+  }
+
+  setFoodBank = (info) => {
+    this.setState({
+      info: info
     })
   }
 
@@ -43,7 +51,7 @@ class App extends Component {
 
   browseView() {
     return (
-      <Home foodBankInfo={this.state.foodBankInfo}/>
+      <Home foodBankInfo={this.state.foodBankInfo} setFoodBank={this.setFoodBank}/>
     );
   }
 
@@ -53,12 +61,19 @@ class App extends Component {
     );
   }
 
+  foodbankInfo() {
+    return(
+      <FoodBankInfo info={this.state.foodBankInfo}/>
+    );
+  }
+
   matchRoute() {
     return(
       <Switch>
         <Route exact path={Routes.signin} component={() => this.signin()} />
         <Route exact path={Routes.signup} component={() => this.signup()} />
         <Route exact path={Routes.home} component={() => this.browseView()} />
+        <Route exact path={Routes.foodbank} component={() => this.foodbankInfo()} />
         <Route exact path={Routes.res} component={() => this.foodbankHome()} />
       </Switch>
     );

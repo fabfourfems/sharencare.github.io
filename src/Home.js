@@ -24,7 +24,7 @@ class Home extends Component {
         return(
             <div>
                 <SearchBar onSearchQuery={this.onSearchQuery}/>
-                <Foodbanks zipcode={this.state.searchQuery} foodBankInfo={this.state.foodBankInfo}/>
+                <Foodbanks zipcode={this.state.searchQuery} foodBankInfo={this.state.foodBankInfo} setFoodBank={this.props.setFoodBank}/>
             </div>
         );
     }

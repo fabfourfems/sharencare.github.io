@@ -27,7 +27,7 @@ class FoodBanks extends Component {
                 });
                 console.log(info);
                 if (info.Zipcode == zipcode) {
-                    cards.push(<HomeCard key={i} name={info.Name} address={info.Address} mission={info.Mission} />);
+                    cards.push(<HomeCard key={i} name={info.Name} address={info.Address} mission={info.Mission} info={info}/>);
                 }
             });
         } else {
@@ -38,7 +38,7 @@ class FoodBanks extends Component {
                         info = info[name];
                     }
                 });
-                cards.push(<HomeCard key={i} name={info.Name} address={info.Address} mission={info.Mission} />);
+                cards.push(<HomeCard key={i} name={info.Name} address={info.Address} mission={info.Mission} info={info}/>);
             });
         }
         return cards;
