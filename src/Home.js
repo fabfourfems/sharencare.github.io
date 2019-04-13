@@ -3,6 +3,7 @@ import HomeCard from './components/HomeCard';
 
 import SearchBar from './components/SearchBar';
 import Foodbanks from './components/Foodbanks';
+import FoodbankDashboard from './components/FoodbankDashboard';
 
 class Home extends Component {
     constructor(props) {
@@ -21,8 +22,9 @@ class Home extends Component {
     render() {
         return(
             <div>
-                <SearchBar onSeaerchQuery={this.onSearchQuery}/>
-                <Foodbanks zipcode={this.state.searchQuery} foodBankInfo={{}}/>
+                {/* <SearchBar onSeaerchQuery={this.onSearchQuery}/>
+                <Foodbanks zipcode={this.state.searchQuery} foodBankInfo={{}}/> */}
+                <FoodbankDashboard></FoodbankDashboard>
             </div>
         );
     }
