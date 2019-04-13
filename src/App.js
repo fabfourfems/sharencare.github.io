@@ -63,7 +63,7 @@ class App extends Component {
 
   foodbankInfo() {
     return(
-      <FoodBankInfo info={this.state.foodBankInfo}/>
+      <FoodBankInfo info={this.state.info}/>
     );
   }
 

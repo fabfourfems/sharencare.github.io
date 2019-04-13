@@ -27,14 +27,15 @@ class FoodBankInfo extends Component {
         return(
             <div>
             <div>
-              <h1>{this.name}</h1>
-              <p>Mission:</p>
-              <p>{this.mission}</p>
-              <p>Location:</p>
-              <p>{this.address}</p>
-              <p className="paragraph">What we need</p>
+              <h1>The Food Bank at St Marys
+</h1>
+              <h3 className="paragraph">Mission:</h3>
+              <p className="paragraph">Since the 1940s, The Food Bank @ St Marys has been supporting Seattle and the surrounding community with hospitality, respect, and nutritious food.</p>
+              <h3 className="paragraph">Location:</h3>
+              <p className="paragraph">611 20th Ave S, Seattle, WA 98144</p>
+              <h3 className="paragraph">What we need</h3>
               <FoodCard/>
-              <p className="paragraph">What we have</p>
+              <h3 className="paragraph">What we have</h3>
               <FoodCard/>
               <br/>
               <br/>
