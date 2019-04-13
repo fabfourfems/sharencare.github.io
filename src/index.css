@@ -19,4 +19,7 @@ code {
   color: #F4976D;
 }
 
-
+.search-bar {
+  margin: 0 25%; 
+  width: 100% !important;
+}

@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 
 import SearchBar from './components/SearchBar';
+import Foodbanks from './components/Foodbanks';
 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            searchQuery: ""
+        }
+    }
+
+    onSearchQuery = (evt) => {
+        this.setState({
+            searchQuery: evt.target.value
+        })
+    }
 
     render() {
         return(
             <div>
-                Browse View
-
-                <SearchBar/>
-
-                Results
+                <SearchBar onSeaerchQuery={this.onSearchQuery}/>
+                <Foodbanks zipcode={this.state.searchQuery} foodBankInfo={{}}/>
             </div>
         );
     }

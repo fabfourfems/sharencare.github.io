@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
-import HomeCard from './components/HomeCard';
+import HomeCard from './HomeCard';
 
 class FoodBanks extends Component {
-    componentDidMount() {
-        // read from firebase
+    constructor(props) {
+        super(props);
+        this.state = {
+            foodBankInfo: props.foodBankInfo
+        };
+    }
+
+    componentWillReceiveProps(nextProps) {
         this.setState({
-            foodbankInfo: {}
+            foodBankInfo: nextProps.foodBankInfo
         })
     }
 
-    makeCards() {
+    makeCards(zipcode) {
         let cards = [];
-        Object.keys(this.state.foodbankInfo).forEach((item) => {
+        Object.keys(this.state.foodBankInfo).forEach((item) => {
             let info = this.state.foodbankInfo[item];
-            cards.push(<HomeCard/>);
+            cards.push(<HomeCard name={info.name} address={info.address} mission={info.mission} />);
         });
+        return cards;
     }
 
     render() {
-        let cards = this.makeCards();
+        let cards = this.makeCards(this.props.zipcode);
         return(
-            <div>
-                {cards}
-            </div>
+            <div>{cards}</div>
         );
     } 
 }
+
+export default FoodBanks;
