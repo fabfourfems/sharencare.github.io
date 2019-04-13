@@ -28,19 +28,21 @@ class FoodbankDashboard extends Component {
                 <div className="row">
                     <div>
                         <h2 id="title">Supply Tracker</h2>
-                        <ColumnChart id="categorychart" data={[["Produce", 32], ["Canned Food", 46], ["Pantry Goods", 28]]} />
+                        <ColumnChart id="categorychart" data={[["Produce", 16], ["Canned Food", 100], ["Pantry Goods", 50]]} />
                     </div>
                     <div id="lowon">
                         <Card>
                             <CardContent id="setOrange" className="content">
-                                <h2>Low On</h2>
+                                <h1>Low On</h1>
+                                <h3>Produce</h3>
                             </CardContent>
                         </Card>
 
                         <Card id="expiring">
                             <CardContent id="setYellow" className="content">
-                                <h2>Expiring Soon</h2>
-
+                                <h1>Expiring Soon</h1>
+                                <h3>50 items expiring soon</h3>
+                                <Button variant="contained">Find out what</Button>
                             </CardContent>
                         </Card>
                     </div>

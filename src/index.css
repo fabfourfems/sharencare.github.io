@@ -80,12 +80,13 @@ code {
 #setYellow{
   background-color: #FBE8A6;
   height: 210px;
+  text-align: center;
 }
 
 #setOrange{
   background-color: #F4976C;
   height: 210px;
-
+  text-align: center;
 }
 
 .table{
@@ -99,3 +100,4 @@ code {
   margin-bottom: 2% !important;
 
 }
+
