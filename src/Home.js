@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import HomeCard from './components/HomeCard';
 
 class Home extends Component {
     render() {
@@ -9,6 +10,7 @@ class Home extends Component {
                 Search bar
 
                 Results
+                <HomeCard />
             </div>
         );
     }

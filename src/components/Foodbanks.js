@@ -13,9 +13,9 @@ class FoodBanks extends Component {
         let cards = [];
         Object.keys(this.state.foodbankInfo).forEach((item) => {
             let info = this.state.foodbankInfo[item];
-            cards.push(<HomeCard/>);
+            cards.push(<HomeCard name={item.name}/>);
         });
-    }
+    }   
 
     render() {
         let cards = this.makeCards();

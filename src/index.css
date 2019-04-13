@@ -16,7 +16,13 @@ code {
 .homecard{
   width: 45%;
   margin: 0 auto;
-  color: #F4976D;
 }
+
+#homecardbackground{
+  background-color: #F4976D !important;
+
+}
+
+
 
 
