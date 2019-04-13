@@ -7,7 +7,7 @@ import Routes from './../routes';
 
 
 
-class Signin extends Component {
+class Signup extends Component {
     componentDidMount() {
         this.authUnsub = this.props.firebase.auth().onAuthStateChanged(user => {
             if (user) {
@@ -15,9 +15,11 @@ class Signin extends Component {
                 this.props.history.push(Routes.res)
             }
         });
+
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            passwordConfirmation: ""
         }
     }
 
@@ -26,17 +28,8 @@ class Signin extends Component {
         this.mounted = false;
     }
 
-    signin() {
-        this.props.firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-        .then(resp => {
-            this.props.routes.push(Routes.res);
-        })
-        .catch((error) => {
-            let errorCode = error.code;
-            let errorMessage = error.message;
-            window.alert(`error code: ${errorCode}\nerror message: ${errorMessage}`);
-        });
-
+    signup() {
+        
     }
 
     render() {
@@ -46,7 +39,7 @@ class Signin extends Component {
 
         return (
             <div className="form">
-                <h3>Sign in</h3>
+                <h3>Create an account</h3>
                 <TextField
                     label="Email Address"
                     placeholder="example@gmail.com"
@@ -55,9 +48,9 @@ class Signin extends Component {
                     margin="normal"
                     variant="outlined"
                     style={field}
-                    onChange={(evt) => {this.setState({email: evt.target.value})}}
+                    onChange={(evt) => { this.setState({ email: evt.target.value }) }}
                 />
-                <br/>
+                <br />
                 <TextField
                     label="Password"
                     type="password"
@@ -68,10 +61,20 @@ class Signin extends Component {
                     onChange={(evt) => { this.setState({ password: evt.target.value }) }}
                 />
                 <br />
-                <Button variant="outlined" color="primary" className="continue" onClick={() => this.signin()}>Continue</Button>
+                <TextField
+                    label="Confirm password"
+                    type="password"
+                    name="Confirm password"
+                    margin="normal"
+                    variant="outlined"
+                    style={field}
+                    onChange={(evt) => { this.setState({ passwordConfirmation: evt.target.value }) }}
+                />
+                <br />
+                <Button variant="outlined" color="primary" className="continue" onClick={() => this.signup()}>Continue</Button>
             </div>
         );
     }
 }
 
-export default withRouter(Signin);
+export default withRouter(Signup);

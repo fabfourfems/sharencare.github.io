@@ -6,19 +6,18 @@ import './App.css';
 import NavBar from './components/NavBar'
 import Home from './Home';
 import Signin from './components/Signin';
+import Signup from './components/Signup';
 
 class App extends Component {
   signin() {
     return (
-      <Signin/>
+      <Signin firebase={this.props.firebase}/>
     );
   }
 
   signup() {
     return (
-      <div>
-        sign up
-      </div>
+      <Signup firebase={this.props.firebase}/>
     );
   }
 

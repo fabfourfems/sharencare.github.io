@@ -20,14 +20,20 @@ code {
 
 .search-bar {
   margin: 0 25%; 
-  width: 100% !important;
+  width: 100%;
+}
+
+.form {
+  margin: 5% 25%;
+}
+
+.continue {
+  float: right;
 }
 
 #homecardbackground{
   background-color: #F4976D !important;
-
 }
-
 
 #categorychart{
   width: 55% !important;
