@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import ReactChartkick, { ColumnChart, PieChart } from 'react-chartkick'
+import Chart from 'chart.js'
+
+ReactChartkick.addAdapter(Chart)
 
 class FoodbankDashboard extends Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class FoodbankDashboard extends Component {
 
     render() {
         return (
-           <p></p> 
+            <ColumnChart id = "categorychart" data={[["Produce", 32], ["Canned Food", 46], ["Pantry Goods", 28]]} />
         );
     }
 

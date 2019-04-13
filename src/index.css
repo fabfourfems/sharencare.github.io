@@ -29,5 +29,8 @@ code {
 }
 
 
-
+#categorychart{
+  width: 55% !important;
+  margin-left: 5%;
+}
 
