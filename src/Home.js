@@ -22,8 +22,8 @@ class Home extends Component {
     render() {
         return(
             <div>
-                <SearchBar onSeaerchQuery={this.onSearchQuery}/>
-                <Foodbanks zipcode={this.state.searchQuery} foodBankInfo={{}}/>
+                {/* <SearchBar onSeaerchQuery={this.onSearchQuery}/>
+                <Foodbanks zipcode={this.state.searchQuery} foodBankInfo={{}}/> */}
                 <FoodbankDashboard></FoodbankDashboard>
             </div>
         );

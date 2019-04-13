@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #B4DFE5;
 }
 
 code {
@@ -20,7 +21,6 @@ code {
 
 .search-bar {
   margin: 0 25%; 
-  width: 100%;
 }
 
 .form {
@@ -36,7 +36,43 @@ code {
 }
 
 #categorychart{
-  width: 55% !important;
+  width: 700px !important;
   margin-left: 5%;
+  height: 500px !important;
+}
+
+#title{
+  margin-left: 5%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+#lowon{
+  margin-top: 5%;
+  margin-right: 5%;
+  width: 30%;
+}
+
+.content{
+  margin-top: -5%;
+  height: 50%;
+}
+
+#expiring{
+  margin-top: 5%;
+}
+
+#setYellow{
+  background-color: #FBE8A6;
+  height: 210px;
+}
+
+#setOrange{
+  background-color: #F4976C;
+  height: 210px;
+
 }
 
