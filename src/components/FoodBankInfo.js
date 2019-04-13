@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import FoodCard from './FoodCard';
+import FoodCard2 from './FoodCard2';
 
 class FoodBankInfo extends Component {
     constructor(props) {
@@ -34,7 +35,7 @@ class FoodBankInfo extends Component {
               <h3 className="paragraph">Location:</h3>
               <p className="paragraph">611 20th Ave S, Seattle, WA 98144</p>
               <h3 className="paragraph">What we need</h3>
-              <FoodCard/>
+              <FoodCard2/>
               <h3 className="paragraph">What we have</h3>
               <FoodCard/>
               <br/>
