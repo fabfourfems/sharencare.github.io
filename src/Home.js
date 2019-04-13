@@ -9,7 +9,8 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchQuery: ""
+            searchQuery: "",
+            foodBankInfo: props.foodBankInfo
         }
     }
 
@@ -22,9 +23,8 @@ class Home extends Component {
     render() {
         return(
             <div>
-                {/* <SearchBar onSeaerchQuery={this.onSearchQuery}/>
-                <Foodbanks zipcode={this.state.searchQuery} foodBankInfo={{}}/> */}
-                <FoodbankDashboard></FoodbankDashboard>
+                <SearchBar onSearchQuery={this.onSearchQuery}/>
+                <Foodbanks zipcode={this.state.searchQuery} foodBankInfo={this.state.foodBankInfo}/>
             </div>
         );
     }

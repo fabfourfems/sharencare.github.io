@@ -17,10 +17,30 @@ class FoodBanks extends Component {
 
     makeCards(zipcode) {
         let cards = [];
-        Object.keys(this.state.foodBankInfo).forEach((item) => {
-            let info = this.state.foodbankInfo[item];
-            cards.push(<HomeCard name={info.name} address={info.address} mission={info.mission} />);
-        });
+        if (zipcode) {
+            Object.keys(this.state.foodBankInfo).map((item, i) => {
+                let info = this.state.foodBankInfo[item];
+                Object.keys(info).map((name, index) => {
+                    if (index == 0) {
+                        info = info[name];
+                    }
+                });
+                console.log(info);
+                if (info.Zipcode == zipcode) {
+                    cards.push(<HomeCard key={i} name={info.Name} address={info.Address} mission={info.Mission} />);
+                }
+            });
+        } else {
+            Object.keys(this.state.foodBankInfo).map((item, i) => {
+                let info = this.state.foodBankInfo[item];
+                Object.keys(info).map((name, index) => {
+                    if (index == 0) {
+                        info = info[name];
+                    }
+                });
+                cards.push(<HomeCard key={i} name={info.Name} address={info.Address} mission={info.Mission} />);
+            });
+        }
         return cards;
     }
 

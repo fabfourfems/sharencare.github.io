@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import logo from '../ShareNCareLogo.png';
+import { Link, withRouter } from "react-router-dom";
+import Routes from './../routes';
 
 const styles = {
   nav: {
@@ -22,21 +24,12 @@ const styles = {
 
   login: {
     color: 'white',
-    textDecoration: 'underline',
   },
 };
 
 class NavBar extends Component {
     constructor(props) {
         super(props);
-    }
-
-    componentDidMount() {
-
-    }
-
-    componentWillReceiveProps(nextProps) {
-       
     }
 
     render() {
@@ -46,9 +39,8 @@ class NavBar extends Component {
                 <Toolbar>
                   <img src={logo} height="60px" alt="logo" />
                   <Typography style={styles.rtext}>
-                    Are you a Food Bank?
+                    <Link to={Routes.signin}><Button style={styles.login}>My Portal</Button></Link>
                   </Typography>
-                  <Button style={styles.login}>Login / SignUp</Button>
                 </Toolbar>
               </AppBar>
             </div>
