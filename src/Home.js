@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import HomeCard from './components/HomeCard';
 
 import SearchBar from './components/SearchBar';
 import Foodbanks from './components/Foodbanks';

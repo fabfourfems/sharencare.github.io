@@ -16,10 +16,18 @@ code {
 .homecard{
   width: 45%;
   margin: 0 auto;
-  color: #F4976D;
 }
 
 .search-bar {
   margin: 0 25%; 
   width: 100% !important;
 }
+
+#homecardbackground{
+  background-color: #F4976D !important;
+
+}
+
+
+
+
