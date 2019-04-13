@@ -8,6 +8,24 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import logo from '../ShareNCareLogo.png';
 
+const styles = {
+  nav: {
+    position: "static",
+    backgroundColor: '#303C6C',
+    color: 'white',
+  },
+
+  rtext: {
+    color: 'white',
+    marginLeft: '1000px',
+  },
+
+  login: {
+    color: 'white',
+    textDecoration: 'underline',
+  },
+};
+
 class NavBar extends Component {
     constructor(props) {
         super(props);
@@ -24,13 +42,13 @@ class NavBar extends Component {
     render() {
         return(
             <div>
-              <AppBar position="static">
+              <AppBar style={styles.nav}>
                 <Toolbar>
-                  <img src={logo} alt="logo" />
-                  <Typography>
-                    Logo
+                  <img src={logo} height="60px" alt="logo" />
+                  <Typography style={styles.rtext}>
+                    Are you a Food Bank?
                   </Typography>
-                  <Button>Are you a Food Bank? Login/SignUp</Button>
+                  <Button style={styles.login}>Login / SignUp</Button>
                 </Toolbar>
               </AppBar>
             </div>
